@@ -1,0 +1,18 @@
+
+= form_for @product do |f|
+  %div.form-group
+    =f.label :name
+    =f.text_field :name, :autofocus => true, :class => 'form-control'
+  %div.form-group
+    = f.label :image, 'Image URL'
+    = f.text_field :image, :class => 'form-control'
+  %div.form-group
+    =f.label :about
+    =f.text_field :about, :class => 'form-control'
+  %div.form-group
+    =f.label :product_type
+    =f.text_field :product_type, :class => 'form-control'
+  %div.form-group
+    =f.label :company_price
+    =f.text_field :company_price, :class => 'form-control'
+  =f.submit

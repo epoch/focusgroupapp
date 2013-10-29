@@ -1,0 +1,26 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: focus_group_app_development
+  pool: 5
+  host: localhost
+  username: matthewthees
+  password:
+
+
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: focus_group_app_test
+#   pool: 5
+#   username: focus_group_app
+#   password:
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: focus_group_app_production
+#   pool: 5
+#   username: focus_group_app
+#   password:

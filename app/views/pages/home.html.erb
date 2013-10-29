@@ -1,0 +1,13 @@
+<h1> New and Noteworthy </h1>
+
+<ul>
+  <% @products.each do |product|%>
+    <li>
+      <ul>
+        <li><%=image_tag product.image%></li>
+        <li><%=link_to product.name, product_path(product.id)%></li>
+        <li><%= product.about %></li>
+      </ul>
+    </li>
+  <%end%>
+</ul>
