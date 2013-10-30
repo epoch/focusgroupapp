@@ -16,7 +16,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :name, :image, :about, :product_type, :company_price, :company_id
 
-  #do i need belongs_to :company here
+  belongs_to :company
   has_many :questions
   has_many :answers, :through => :questions
 end

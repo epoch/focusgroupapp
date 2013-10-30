@@ -3,17 +3,49 @@
     -@user.errors.full_messages.each do |msg|
       %li.alert.alert-danger= msg
 
-= form_for @user do |f|
-  %div.form-group
-    =f.label :username
-    =f.text_field :username, :autofocus => true, :class => 'form-control'
-  %div.form-group
-    =f.label :age
-    =f.text_field :age, :class => 'form-control'
-  %div.form-group
-    =f.label :password
-    =f.password_field :password, :class => 'form-control'
-  %div.form-group
-    =f.label :password_confirmation
-    =f.password_field :password_confirmation, :class => 'form-control'
-  =f.submit
+
+
+%div.col-md-5
+
+  %h2= "Create a User Account"
+
+  = form_for @user do |f|
+    %div.form-group
+      =f.label :username
+      =f.text_field :username, :autofocus => true, :class => 'form-control'
+    %div.form-group
+      =f.label :age
+      =f.text_field :age, :class => 'form-control'
+    %div.form-group
+      =f.label :password
+      =f.password_field :password, :class => 'form-control'
+    %div.form-group
+      =f.label :password_confirmation
+      =f.password_field :password_confirmation, :class => 'form-control'
+    =f.submit
+
+%div.col-md-1
+
+%div.col-md-5
+
+  %h2= "Create a Company Accout"
+
+  = form_for @company do |f|
+    %div.form-group
+      =f.label :name
+      =f.text_field :name, :class => 'form-control'
+    %div.form-group
+      =f.label :picture
+      =f.text_field :picture, :class => 'form-control'
+    %div.form-group
+      =f.label :info
+      =f.text_field :info, :class => 'form-control'
+    %div.form-group
+      =f.label :password
+      =f.password_field :password, :class => 'form-control'
+    %div.form-group
+      =f.label :password_confirmation
+      =f.password_field :password_confirmation, :class => 'form-control'
+    =f.submit
+
+

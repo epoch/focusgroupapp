@@ -2,7 +2,57 @@
   <h1> <%= @product.name %> </h1>
   <img class='productimg' src="<%= @product.image %>">
   <ul>
-    <li><%= @product.about %> </li>
+    <li>made by: <b><%= @product.company.name %></b></li>
+    <li>Description: <%= @product.about %> </li>
     <li><%= @product.product_type %></li>
+    <li>Proposed price: <%= number_to_currency(@product.company_price)%></li>
   </ul>
+
+
+<%== edit_product_menu %>
+
+</div>
+
+<div class='container'>
+  <!-- <#% @product.questions.each do |question| %>
+    <div class='question'><#%= question.question %></div>
+  <#%end%> -->
+
+
+<% if @company_authenticated.nil? == false %>
+  <h2> Questions to be answered. </h2>
+  <% @product.questions.each do |question| %>
+      <div class="questions">
+        <p><%= question.question %></p>
+      </div>
+    <%end%>
+
+<% elsif @authenticated.nil? %>
+  <h2> Please sign in to submit your feedback </h2>
+  <% @product.questions.each do |question| %>
+      <div class="questions">
+        <p><%= question.question %></p>
+      </div>
+    <%end%>
+
+<% elsif (@product.questions.map(&:id) & @authenticated.answers.map(&:question_id)).length == 0 %>
+  <%= form_tag "/answers", :method => 'post' do %>
+    <% @product.questions.each do |question| %>
+      <div class="questions">
+        <p><%= question.question %></p>
+
+        <label for="answer">Answer</label>
+        <textarea name="answer[<%= question.id %>]"></textarea>
+      </div>
+    <% end %>
+
+    <!-- trying to get the 'Save Changes' button to disapear if their are no questions -->
+    <%if @product.questions.nil? == false%>
+      <%= submit_tag %>
+    <%end%>
+
+  <% end %>
+<%else%>
+  <p> You have already submitted your answers for this product. </p>
+<% end %>
 </div>

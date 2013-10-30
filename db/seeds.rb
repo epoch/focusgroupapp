@@ -5,7 +5,7 @@ Question.destroy_all
 User.destroy_all
 
 
-c1 = Company.create(:name => 'Apple', :picture => 'http://upload.wikimedia.org/wikipedia/commons/a/a5/Apple_gray_logo.png')
+c1 = Company.create(:name => 'Apple', :picture => 'http://upload.wikimedia.org/wikipedia/commons/a/a5/Apple_gray_logo.png', :password => 'a', :password_confirmation => 'a')
 
 u1 = User.create(:username => 'Matt', :password => 'a', :password_confirmation => 'a')
 

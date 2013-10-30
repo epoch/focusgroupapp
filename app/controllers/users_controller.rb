@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @company = Company.new
   end
 
   def create
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    #where do we get @authenticated from?
     @user = @authenticated
     render "new"
   end

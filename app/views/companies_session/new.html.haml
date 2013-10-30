@@ -1,0 +1,10 @@
+%h3= "Enter your 'Company Name' and 'Password' below"
+
+= form_tag '/company/login' do
+  =label_tag 'name', nil, :autofocus => true
+  =text_field_tag 'name'
+
+  =label_tag 'password'
+  =password_field_tag 'password'
+
+  =submit_tag 'Login'

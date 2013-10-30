@@ -1,0 +1,6 @@
+<% @product.questions.each do |q| %>
+  <h2> <%= q.question %> </h2>
+    <% q.answers.each do |a| %>
+      <p> <%= q.answers.last.user_id %>: <%= a.answer%> </p>
+    <%end%>
+<%end%>

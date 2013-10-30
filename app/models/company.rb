@@ -12,7 +12,8 @@
 #
 
 class Company < ActiveRecord::Base
-  attr_accessible :name, :password, :password_digest, :picture, :info
+  has_secure_password
+  attr_accessible :name, :password, :password_confirmation, :picture, :info
 
   has_many :products
 end

@@ -1,0 +1,20 @@
+<div class='container'>
+  <h1> <%= @company.name %> </h1>
+  <img class='productimg' src="<%= @company.picture %>">
+  <ul>
+    <li><%= @company.info %> </li>
+    <li>Member since: <%= @company.created_at %></li>
+  </ul>
+</div>
+
+<div class='container'>
+  <% @company.products.each do |product| %>
+    <div class='company_product'>
+      <ul>
+        <li><%= product.name %></li>
+        <img src="<%= product.image %>">
+        <li><%= product.product_type %></li>
+        <li><%= product.about %></li>
+    </div>
+  <%end%>
+</div>
