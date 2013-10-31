@@ -5,7 +5,7 @@ gem 'pg'
 gem 'haml'
 gem 'bcrypt-ruby', '3.0.0'
 
-#gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 
 
 group :assets do
