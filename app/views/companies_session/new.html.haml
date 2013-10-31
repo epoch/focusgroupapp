@@ -1,10 +1,16 @@
-%h3= "Enter your 'Company Name' and 'Password' below"
+%div.company-login
+  %div.company-login-box
+    %h2.white Enter your Username and Password
+    %p.white note: Username and Password are case sensitive!
+    = form_tag '/company/login' do
+      %div.form-group
+        =label_tag 'name', nil, :autofocus => true
+        =text_field_tag 'name'
+      %div.form-group
+        =label_tag 'password'
+        =password_field_tag 'password'
 
-= form_tag '/company/login' do
-  =label_tag 'name', nil, :autofocus => true
-  =text_field_tag 'name'
+    =submit_tag 'Login', :class => 'btn btn-lg btn-success'
 
-  =label_tag 'password'
-  =password_field_tag 'password'
 
-  =submit_tag 'Login'
+/ these are form tags. I want them to look like the the bootstrap forms. how the fuck can i do that?

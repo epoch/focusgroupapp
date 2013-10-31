@@ -1,31 +1,43 @@
-<h1 class='homepage'> New and Noteworthy </h1>
+ <%unless @authenticated.present? or @company_authenticated.present? %>
+  <div class="jumbotron">
+    <h1>Welcome to FocusME!</h1>
+    <p>FocusME is an online platform for consumers to give companies their feedback. Companies come to post new products, and Consumers come to make them better!</p>
+    <p>
+      <a class="btn btn-lg btn-primary buttoncreate" href="/users/new" role="button">Create Account &raquo;</a>
+    </p>
+  </div>
+  <div class="jumbotron">
+      <a class="btn btn-lg btn-primary bigbuttona" href="/user/login" role="button"><p class='button'>User Login</p></a>
+      <a class="btn btn-lg btn-primary bigbuttonb" href="/company/login" role="button"><p class='button'>Company Login</p></a>
+    </p>
+  </div>
 
-<div class='col-md-8'>
-  <% @products.each do |product|%>
-    <div class='main_content'>
+  <%else%>
+  <h1 class='homepage'> New and Noteworthy </h1>
+
+  <div class='col-md-8'>
+    <% @products.each do |product|%>
+      <div class='main_content'>
+        <ul>
+          <li><%=image_tag product.image, :class => 'productimg'%></li>
+          <li class='large'><%=link_to product.name, product_path(product.id)%></li>
+          <li class='last'><%= product.about %></li>
+        </ul>
+      </div>
+    <%end%>
+  </div>
+
+
+  <div class='col-md-4 sidebar'>
+    <aside class="about">
+      <h1>SEARCH BY COMPANY</h1>
+      <p>Click one to see all listed products</p>
       <ul>
-        <li><%=image_tag product.image, :class => 'productimg'%></li>
-        <li class='large'><%=link_to product.name, product_path(product.id)%></li>
-        <li class='last'><%= product.about %></li>
+        <% Company.all.each do |company| %>
+          <li><%= link_to company.name, company_path(company) %></li>
+        <% end %>
       </ul>
-    </div>
-  <%end%>
-</div>
+    </aside>
+  </div>
+<%end%>
 
-
-<div class='col-md-4 sidebar'>
-  <aside class="about">
-    <h1>SEARCH BY COMPANY</h1>
-    <p>Click one to see all listed products</p>
-    <ul>
-      <% Company.all.each do |company| %>
-        <li><%= link_to company.name, company_path(company) %></li>
-      <% end %>
-    </ul>
-  </aside>
-</div>
-
-
-<!--  <div class="col-md-3">
-
-      </div> -->

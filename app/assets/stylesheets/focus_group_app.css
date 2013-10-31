@@ -10,10 +10,34 @@ div.company {
   width: 350px;
 }
 
+div.user-login {
+  width: 580px;
+  border-radius: 10px;
+  background-color: #5AC6FF;
+}
+
+div.company-login {
+  width: 580px;
+  border-radius: 10px;
+  background-color: #FD6B6E;
+}
+
 div.company_product {
   margin-bottom: 4em;
   border-radius: 10px;
   background-color: #BEC8D1;
+}
+
+div.login-box {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+
+div.company-login-box {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
 }
 
 /*cool green color was #99E76D*/
@@ -89,5 +113,66 @@ li.large {
 
 li.last {
   padding-bottom: 12px;
+}
+
+.buttoncreate {
+  background-color: #99E76D;
+  border-color: black;
+}
+
+.buttoncreate:hover {
+  background-color: #72B748;
+  border-color: black;
+}
+
+.bigbuttona {
+  width: 500px;
+  height: 200px;
+  background-color: #5AC6FF;
+}
+
+.bigbuttonb {
+  width: 500px;
+  height: 200px;
+  background-color: #FD6B6E;
+}
+
+.bigbuttonb:hover {
+  background-color: #B44343;
+}
+
+p.button {
+  padding-top: 65px;
+  font-size: 35px
+}
+
+.red {
+  background-color: #FD6B6E;
+  border-color: grey;
+}
+
+.red:hover {
+  background-color: grey;
+  border-color: #FD6B6E;
+}
+
+.blue {
+  background-color: #5AC6FF;
+  border-color: grey;
+}
+
+.blue:hover {
+  background-color: grey;
+  border-color: #5AC6FF;
+}
+
+div.col-md-5 {
+  background-color: #EEEEEE;
+  padding-bottom: 2em;
+  border-radius: 10px;
+}
+
+.white {
+  color: white;
 }
 
