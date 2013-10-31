@@ -19,11 +19,14 @@
   <#%end%> -->
 
 
-<% if @company_authenticated.nil? == false %>
+<% if @company_authenticated.present? && @company_authenticated.id == @product.company_id %>
   <h2> Questions to be answered. </h2>
   <% @product.questions.each do |question| %>
       <div class="questions">
         <p><%= question.question %></p>
+
+        <%= button_to 'Delete', question_path(question), :method => 'delete' %>
+
       </div>
     <%end%>
 
@@ -47,7 +50,7 @@
     <% end %>
 
     <!-- trying to get the 'Save Changes' button to disapear if their are no questions -->
-    <%if @product.questions.nil? == false%>
+    <%if @product.questions.empty? == false%>
       <%= submit_tag %>
     <%end%>
 

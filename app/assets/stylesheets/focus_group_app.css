@@ -1,8 +1,94 @@
 body {
-  margin-top: 60px
+  margin-top: 60px;
 }
 
+div.pushdown {
+  border-radius: 10px;
+}
+
+div.company {
+  width: 350px;
+}
+
+div.company_product {
+  margin-bottom: 4em;
+  border-radius: 10px;
+  background-color: #BEC8D1;
+}
+
+/*cool green color was #99E76D*/
+
 img.productimg {
-  width: 600px;
+  width: 650px;
+  border-radius: 10px;
+  margin-top: 35px;
+  margin-bottom: 2em;
+}
+
+img.companyimg {
+  width: 340px;
+  border-radius: 10px;
+  margin-bottom: 2em;
+}
+
+h3.right {
+  text-align: right;
+  margin-right: ;
+  padding-right: 20px;
+  line-height: 45px;
+  border-radius: 10px;
+  background-color: #5AC6FF;
+  color: white;
+}
+
+.main_content {
+  background-color: #BEC8D1;
+  border-radius: 10px;
+  margin-bottom: 2em
+}
+
+.profile {
+  background-color: #FD6B6E;
+  color: white;
+  border-radius: 10px
+}
+
+.sidebar {
+  background-color: #99E76D;
+  width: 300px;
+  min-height: 300px;
+  border-radius: 10px;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  margin-left: none;
+}
+
+h1.homepage {
+  background-color: #5AC6FF;
+  color: white;
+  padding-left: 18px;
+  line-height: 50px;
+  border-radius: 10px;
+  width: 95%;
+}
+
+h3.product_name {
+  padding-top: 20px;
+}
+
+li.date {
+  margin-top: 5px;
+  padding-bottom: 8px;
+}
+
+li.large {
+  font-size:
+}
+
+li.last {
+  padding-bottom: 12px;
 }
 

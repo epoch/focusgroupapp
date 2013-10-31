@@ -1,0 +1,11 @@
+= form_for @company do |f|
+  %div.form-group
+    =f.label :name
+    =f.text_field :name, :class => 'form-control'
+  %div.form-group
+    =f.label :picture
+    =f.text_field :picture, :class => 'form-control'
+  %div.form-group
+    =f.label :info
+    =f.text_field :info, :class => 'form-control'
+  =f.submit

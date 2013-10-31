@@ -1,20 +1,33 @@
 <div class='container'>
-  <h1> <%= @company.name %> </h1>
-  <img class='productimg' src="<%= @company.picture %>">
-  <ul>
-    <li><%= @company.info %> </li>
-    <li>Member since: <%= @company.created_at %></li>
-  </ul>
-</div>
+  <div class='col-md-4 profile'>
+    <h1> <%= @company.name %> </h1>(company page)
+    <img class='companyimg' src="<%= @company.picture %>">
 
-<div class='container'>
-  <% @company.products.each do |product| %>
-    <div class='company_product'>
-      <ul>
-        <li><%= product.name %></li>
-        <img src="<%= product.image %>">
-        <li><%= product.product_type %></li>
-        <li><%= product.about %></li>
+    <!-- try to move the company info over next to the image -->
+
+    <div class='company'>
+      <p><%= @company.info %> </p>
+      <p>Member since: <%= @company.created_at.strftime("%m/%d/%Y") %></p>
     </div>
-  <%end%>
+    <% if @company_authenticated.present? && @company_authenticated.id == @company.id %>
+    <p><%= link_to 'Edit Profile', edit_companies_path %></p>
+    <%end%>
+  </div>
+
+  <div class='col-md-8'>
+    <div class='push down'>
+      <h3 class='right'> Products </h3>
+      <% @company.products.each do |product| %>
+        <div class='company_product'>
+          <ul>
+            <li><h3 class='product_name'><%=link_to product.name, product_path(product.id)%></h3></li>
+            <img class="productimg" src="<%= product.image %>">
+            <li><b>Type:</b> <%= product.product_type %></li>
+            <li><b>Description:</b> <%= product.about %></li>
+            <li class='date'>Posted On: <%= product.created_at.strftime("%m/%d/%Y") %></li>
+          </ul>
+        </div>
+      <%end%>
+    </div>
+  </div>
 </div>

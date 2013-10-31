@@ -13,4 +13,17 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def edit
+    @company = @company_authenticated
+
+    render 'edit'
+  end
+
+  def update
+    company = Company.find(params[:id])
+    company.update_attributes params[:company]
+
+    redirect_to company_path
+  end
+
 end

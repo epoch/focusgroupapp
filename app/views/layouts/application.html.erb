@@ -29,20 +29,13 @@
   </div>
 
   <div class='container'>
+    <%if flash[:notice]%>
+      <div class="alert alert-warning"><%= flash[:notice] %></div>
+    <%end%>
 
       <%= yield %>
 
-<!--     <div class="col-md-3">
-        <aside class="about">
-          <h1>SEARCH BY COMPANY</h1>
-          <p>Click one to see all listed products</p>
-          <ul>
-            <#% Company.all.each do |company| %>
-              <li><#%= link_to company.name, company_path(company) %></li>
-            <#% end %>
-          </ul>
-        </aside>
-      </div> -->
+
   </div>
 </body>
 </html>
