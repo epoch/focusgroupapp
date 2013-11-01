@@ -1,4 +1,14 @@
 # focus|me
+=============
+focus|me is an app that bridges the gap between product makers and consumers.
+=============
+=============
+
+##Notes from this project
+  * functionality is key, get that first, worry about looks later
+  * allow more time than you think for front end
+    - even using bootsrap takes time
+  * commit early, comit often
 
 ## To-do/Wishlist
   * make the site more navagatable (some things i would like to be links that are not)
