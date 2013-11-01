@@ -1,7 +1,6 @@
 - if @user.errors.any?
   %ul.list-unstyled
-    -@user.errors.full_messages.each do |msg|
-      %li.alert.alert-danger= msg
+    %li.alert.alert-danger= msg
 
 
 
