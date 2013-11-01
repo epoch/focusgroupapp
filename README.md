@@ -6,7 +6,7 @@
 =============
 =============
 
-##Notes from this project
+## Notes from this project
   * functionality is key, get that first, worry about looks later
   * allow more time than you think for front end
     - even using bootsrap takes time
