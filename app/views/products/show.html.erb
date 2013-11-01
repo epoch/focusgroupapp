@@ -46,9 +46,9 @@
 
 <% elsif (@product.questions.map(&:id) & @authenticated.answers.map(&:question_id)).length == 0 %>
   <%= form_tag "/answers", :method => 'post' do %>
+    <h3 class='questions'>Questions</h3>
     <% @product.questions.each do |question| %>
       <div class="questions">
-        <h3 class='questions'>Questions</h3>
         <p><%= question.question %></p>
 
         <label for="answer">Answer</label>
