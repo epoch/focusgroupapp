@@ -121,6 +121,7 @@ li.last {
 .buttoncreate {
   background-color: #99E76D;
   border-color: black;
+  margin-bottom: 10px;
 }
 
 .buttoncreate:hover {
@@ -218,5 +219,8 @@ div.questions {
   padding-left: 2em;
 }
 
+h3.questions {
+  margin-top: 10px;
+}
 
 
