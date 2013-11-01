@@ -30,6 +30,7 @@ FocusGroupApp::Application.routes.draw do
 
   post '/answers' => 'questions#answers'
   get '/products/:id/answers' => 'products#show_answers', :as => 'show_answers'
+
   resources :questions
 
 end
