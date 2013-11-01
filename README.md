@@ -22,4 +22,3 @@ If you'd like to know more about General Assembly's Web Development Immersive, g
 
 ## Made by Matthew Thees 2013
 
-
