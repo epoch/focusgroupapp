@@ -1,19 +1,25 @@
-<div class='container'>
-  <h1> <%= @product.name %> </h1>
-  <img class='productimg' src="<%= @product.image %>">
-  <ul>
-    <li>made by: <b><%= @product.company.name %></b></li>
-    <li>Description: <%= @product.about %> </li>
-    <li><%= @product.product_type %></li>
-    <li>Proposed price: <%= number_to_currency(@product.company_price)%></li>
-  </ul>
+<h1 class='homepage'> <%= @product.name %> </h1>
+<div class='row'>
+<div class='col-md-8'>
 
+  <img class='productimg productpage' src="<%= @product.image %>">
+  <div class='company_product sizematch'>
+    <ul>
+      <li>made by: <b><%= @product.company.name %></b></li>
+      <li>Description: <%= @product.about %> </li>
+      <li>Type: <%= @product.product_type %></li>
+      <li>Proposed price: <%= number_to_currency(@product.company_price)%></li>
+    </ul>
+  </div>
 
-<%== edit_product_menu %>
-
+<div class='editbar'>
+  <%== edit_product_menu %>
+</div>
 </div>
 
-<div class='container'>
+<div class='col-md-4 profile customside'>
+
+
   <!-- <#% @product.questions.each do |question| %>
     <div class='question'><#%= question.question %></div>
   <#%end%> -->
@@ -58,4 +64,5 @@
 <%else%>
   <p> You have already submitted your answers for this product. </p>
 <% end %>
+</div>
 </div>

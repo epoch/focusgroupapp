@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def edit
     #where do we get @authenticated from?
     @user = @authenticated
-    render "new"
+    render "edit"
   end
 
   def update
@@ -30,4 +30,10 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+
+  private
+  def check_if_logged_in
+    redirect_to(root_path) if @authenticated.nil?
+  end
+
 end

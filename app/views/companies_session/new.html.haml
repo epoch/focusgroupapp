@@ -5,12 +5,12 @@
     = form_tag '/company/login' do
       %div.form-group
         =label_tag 'name', nil, :autofocus => true
-        =text_field_tag 'name'
+        =text_field_tag 'name', nil, :class => 'form-control'
       %div.form-group
         =label_tag 'password'
-        =password_field_tag 'password'
+        =password_field_tag 'password', nil, :class => 'form-control'
 
-    =submit_tag 'Login', :class => 'btn btn-lg btn-success'
+      =submit_tag 'Login', :class => 'btn btn-lg btn-success'
 
 
 / these are form tags. I want them to look like the the bootstrap forms. how the fuck can i do that?

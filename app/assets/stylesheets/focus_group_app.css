@@ -1,5 +1,5 @@
 body {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 div.pushdown {
@@ -14,6 +14,7 @@ div.user-login {
   width: 580px;
   border-radius: 10px;
   background-color: #5AC6FF;
+  padding-right: 2em;
 }
 
 div.company-login {
@@ -22,7 +23,7 @@ div.company-login {
   background-color: #FD6B6E;
 }
 
-div.company_product {
+.company_product {
   margin-bottom: 4em;
   border-radius: 10px;
   background-color: #BEC8D1;
@@ -38,11 +39,12 @@ div.company-login-box {
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
+  padding-right: 2em;
 }
 
 /*cool green color was #99E76D*/
 
-img.productimg {
+.productimg {
   width: 650px;
   border-radius: 10px;
   margin-top: 35px;
@@ -62,6 +64,7 @@ h3.right {
   border-radius: 10px;
   background-color: #5AC6FF;
   color: white;
+  margin-top: 5px;
 }
 
 .main_content {
@@ -168,6 +171,7 @@ p.button {
 
 div.col-md-5 {
   background-color: #EEEEEE;
+  padding-top: 1em;
   padding-bottom: 2em;
   border-radius: 10px;
 }
@@ -175,4 +179,44 @@ div.col-md-5 {
 .white {
   color: white;
 }
+
+.homebutton {
+  font-family: Delius Swash Caps;
+}
+
+.jtronbuttons {
+  height: 315px;
+}
+
+div.company_product ul {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 25px;
+}
+
+.sizematch {
+  width: 95%;
+  margin-bottom: 2em;
+}
+
+.productpage {
+  margin-left: 2em;
+  margin-top: 20px;
+}
+
+div.questions {
+  padding-bottom: 2em;
+}
+
+.customside {
+  margin-top: -30px;
+  margin-left: -60px;
+}
+
+.editbar {
+  margin-bottom: 3em;
+  padding-left: 2em;
+}
+
+
 

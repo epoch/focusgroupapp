@@ -1,16 +1,19 @@
  <%unless @authenticated.present? or @company_authenticated.present? %>
   <div class="jumbotron">
-    <h1>Welcome to FocusME!</h1>
+    <h1>Welcome to <span class='homebutton'>focus|me</span></h1>
     <p>FocusME is an online platform for consumers to give companies their feedback. Companies come to post new products, and Consumers come to make them better!</p>
     <p>
       <a class="btn btn-lg btn-primary buttoncreate" href="/users/new" role="button">Create Account &raquo;</a>
     </p>
   </div>
-  <div class="jumbotron">
-      <div class='col-md-5'><a class="btn btn-lg btn-primary bigbuttona" href="/user/login" role="button"><p class='button'>User Login</p></a></div>
+  <div class="jumbotron jtronbuttons">
+    <div class='row'>
+      <div class='col-md-5 col-md-offset-1'><a class="btn btn-lg btn-primary bigbuttona" href="/user/login" role="button"><p class='button'>User Login</p></a></div>
       <div class='col-md-5'><a class="btn btn-lg btn-primary bigbuttonb" href="/company/login" role="button"><p class='button'>Company Login</p></a></div>
-    </p>
+    </div>
   </div>
+
+
 
   <%else%>
   <h1 class='homepage'> New and Noteworthy </h1>
