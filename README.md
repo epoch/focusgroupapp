@@ -1,6 +1,8 @@
 # focus||me
 =============
-###focus||me is an app that bridges the gap between product makers and consumers.
+### focus||me is an app that bridges the gap between product makers and consumers.
+
+### http://focusgroupapp.herokuapp.com
 =============
 =============
 
