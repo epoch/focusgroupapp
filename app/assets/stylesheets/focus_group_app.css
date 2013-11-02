@@ -10,6 +10,11 @@ div.company {
   width: 350px;
 }
 
+p.footer {
+  padding-top: 15px;
+  margin-left: 2em;
+}
+
 div.user-login {
   width: 580px;
   border-radius: 10px;
@@ -24,7 +29,7 @@ div.company-login {
 }
 
 .company_product {
-  margin-bottom: 4em;
+  margin-bottom: 100px;
   border-radius: 10px;
   background-color: #BEC8D1;
 }
@@ -46,6 +51,7 @@ div.company-login-box {
 
 .productimg {
   width: 650px;
+  height: 455px;
   border-radius: 10px;
   margin-top: 35px;
   margin-bottom: 2em;
@@ -98,7 +104,9 @@ h1.homepage {
   padding-left: 18px;
   line-height: 50px;
   border-radius: 10px;
-  width: 95%;
+  width: 100%;
+  margin-top: 0;
+  margin-left: -25px;
 }
 
 h3.product_name {
@@ -196,12 +204,11 @@ div.company_product ul {
 }
 
 .sizematch {
-  width: 95%;
-  margin-bottom: 2em;
+  width: 92%;
 }
 
 .productpage {
-  margin-left: 2em;
+  margin-left: 1em;
   margin-top: 20px;
 }
 
@@ -210,8 +217,7 @@ div.questions {
 }
 
 .customside {
-  margin-top: -30px;
-  margin-left: -25px;
+  margin-top: 20px;
 }
 
 .editbar {
@@ -223,4 +229,20 @@ h3.questions {
   margin-top: 10px;
 }
 
+span.companyname {
+  font-size: 20px;
+}
+
+span.color {
+  color: red;
+}
+
+li.description {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+li.description p {
+   padding-left: 1em
+}
 

@@ -1,14 +1,62 @@
+<div class="container">
 <h1 class='homepage'> <%= @product.name %> </h1>
 <div class='row'>
+  <div class='col-md-4 profile customside'>
+
+    <% if @company_authenticated.present? && @company_authenticated.id == @product.company_id %>
+      <h2> Questions to be answered. </h2>
+      <% @product.questions.each do |question| %>
+          <div class="questions">
+            <p><%= question.question %></p>
+
+            <%= button_to 'Delete', question_path(question), :method => 'delete' %>
+
+          </div>
+        <%end%>
+
+    <% elsif @authenticated.nil? %>
+      <h2> Please sign in to submit your feedback </h2>
+      <% @product.questions.each do |question| %>
+          <div class="questions">
+            <p><%= question.question %></p>
+          </div>
+        <%end%>
+
+    <% elsif (@product.questions.map(&:id) & @authenticated.answers.map(&:question_id)).length == 0 %>
+      <%= form_tag "/answers", :method => 'post' do %>
+        <h3 class='questions'>Questions</h3>
+        <% @product.questions.each do |question| %>
+          <div class="questions">
+            <p><%= question.question %></p>
+
+            <label for="answer">Answer</label>
+            <textarea name="answer[<%= question.id %>]"></textarea>
+          </div>
+        <% end %>
+
+        <!-- trying to get the 'Save Changes' button to disapear if their are no questions -->
+        <%if @product.questions.empty? == false%>
+          <%= submit_tag nil, :class => 'btn btn-lg btn-success buttoncreate' %>
+        <%end%>
+
+      <% end %>
+
+    <%else%>
+      <p> You have already submitted your answers for this product. </p>
+    <% end %>
+
+</div>
+
+
 <div class='col-md-8'>
 
   <img class='productimg productpage' src="<%= @product.image %>">
   <div class='company_product sizematch'>
     <ul>
-      <li>made by: <b><%= @product.company.name %></b></li>
-      <li>Description: <%= @product.about %> </li>
-      <li>Type: <%= @product.product_type %></li>
-      <li>Proposed price: <%= number_to_currency(@product.company_price)%></li>
+      <li>made by: <b><span class="companyname"><%= @product.company.name %></span></b></li>
+      <li class="description"><b>Description/Tech Specs:</b><p><%= @product.about %></p></li>
+      <li><b>Type:</b> <%= @product.product_type %></li>
+      <li><b>Proposed price:</b> <span class="color"><%= number_to_currency(@product.company_price)%></li>
     </ul>
   </div>
 
@@ -17,53 +65,6 @@
 </div>
 </div>
 
-<div class='col-md-4 profile customside'>
 
-
-  <!-- <#% @product.questions.each do |question| %>
-    <div class='question'><#%= question.question %></div>
-  <#%end%> -->
-
-
-<% if @company_authenticated.present? && @company_authenticated.id == @product.company_id %>
-  <h2> Questions to be answered. </h2>
-  <% @product.questions.each do |question| %>
-      <div class="questions">
-        <p><%= question.question %></p>
-
-        <%= button_to 'Delete', question_path(question), :method => 'delete' %>
-
-      </div>
-    <%end%>
-
-<% elsif @authenticated.nil? %>
-  <h2> Please sign in to submit your feedback </h2>
-  <% @product.questions.each do |question| %>
-      <div class="questions">
-        <p><%= question.question %></p>
-      </div>
-    <%end%>
-
-<% elsif (@product.questions.map(&:id) & @authenticated.answers.map(&:question_id)).length == 0 %>
-  <%= form_tag "/answers", :method => 'post' do %>
-    <h3 class='questions'>Questions</h3>
-    <% @product.questions.each do |question| %>
-      <div class="questions">
-        <p><%= question.question %></p>
-
-        <label for="answer">Answer</label>
-        <textarea name="answer[<%= question.id %>]"></textarea>
-      </div>
-    <% end %>
-
-    <!-- trying to get the 'Save Changes' button to disapear if their are no questions -->
-    <%if @product.questions.empty? == false%>
-      <%= submit_tag nil, :class => 'btn btn-lg btn-success buttoncreate' %>
-    <%end%>
-
-  <% end %>
-<%else%>
-  <p> You have already submitted your answers for this product. </p>
-<% end %>
 </div>
 </div>
